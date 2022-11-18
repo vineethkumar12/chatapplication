@@ -1,23 +1,49 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { Home } from './Components/Home';
+import { Signin } from './Components/Signin';
+import { Register } from './Components/Register';
+import {  useState } from 'react';
+
+function App() { 
+   
+  const [route,setroute]=useState('sign')  
+
+
+
+  const change=(rout)=>{
+   
+    setroute(rout)
+
+
+
+  }
+    
+ 
+     
+
+
+  
+  
+
+
+
+  return ( 
+    <div className='cont  '>
+    
+     { route==='home'?  <Home change={change}/> : 
+     <div>
+       { route==="register"?  <Register setroute={setroute} change={change}/> : <Signin change={change}/>
+     
+       } 
+     
+      </div>
+      } 
+ 
+ 
+  
+
     </div>
   );
 }

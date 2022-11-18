@@ -4,10 +4,92 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+.home{ 
+  display: flex;
+  justify-content: center; 
+  background-color: rgb(202, 227, 40); 
+  height: 100vh;
+} 
+.container{
+    border: 1px solid red;
+    height: 80vh;
+  width: 65%;
+  overflow: hidden;
+   margin-top: 50px;
+   border-radius: 10px;
+
+} 
+.navbar{
+ display: flex;
+ align-items: center; 
+  
+ justify-content: space-between;
+
+
+
+} 
+.chatbar{
+  display: flex;
+  align-items: center; 
+ justify-content: space-between;
+  
+  width: 126%; 
+  
+
+ 
+ 
+ 
+ } 
+ .messages{
+  background-color: #ddddf7;
+  padding: 10px; 
+
+ 
+ } 
+ .input{
+
+   
+
+  height: 9%;  
+  margin-left: 4px;
+  margin-top: 4px; 
+  margin-right: 4px;  
+  display: flex;
+ align-items: center; 
+ 
+justify-content: space-between;
+
+
+
+
+ } 
+ .image{
+ margin-left:5%;
+ }
+ 
+.sign{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+ 
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+} 
