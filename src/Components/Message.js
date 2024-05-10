@@ -9,13 +9,13 @@ export const Message = ({message,currentuser}) => {
 
      },[message])
 
- console.log(message.date)
+ 
 
   return (
-    <div ref={ref} className={` flex flex-col mb-2 mr-4 } `} > 
+    <div ref={ref} className={` flex flex-col mb-2 mr-4  `} > 
       <div className={`flex   ${message.senderId === currentuser.uid && "flex-row-reverse "}  `}> 
         <div className=''>  
-            <img  className= " w-7 rounded-md mr-2  " src={message.senderId === currentuser.uid?currentuser.photoURL:data.user.photoURL} alt="noimage" />
+            <img  className= " w-7 rounded-md mr-2 " src={message.senderId === currentuser.uid?currentuser.photoURL:data.user.photoURL} alt="noimage" />
              <span>{}</span> 
         </div>
         <div className={`space-y-2 mr-2  `}> 

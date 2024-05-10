@@ -7,13 +7,16 @@ import { Chats } from './Chats'
 export const Search = ({currentuser}) => { 
   const [username,setusername]=useState("")
   const [user,setuser]=useState(null)
-  const [error,seterror]=useState(null)  
+  const [error,seterror]=useState(false)  
   const handlesearch = async ()=>{  
 
     const qu =query(collection(db,'users'),where("displayName","==",username))
+    
      
-   try{const querySnapshot=await getDocs(qu)
-   querySnapshot.forEach(doc => {
+      
+  
+   try{  const querySnapshot=await getDocs(qu)
+         querySnapshot.forEach(doc => {
     
     setuser(doc.data())
    });}
@@ -31,7 +34,7 @@ seterror(true)
 
   const handlechats = async()=>{ 
     const combinedId =currentuser.uid>user.uid?currentuser.uid+user.uid:user.uid+currentuser.uid;
-      
+     
     try{  
     const res=await getDoc(doc(db,"chats",combinedId) )
     if(!res.exists())
@@ -57,13 +60,14 @@ seterror(true)
           },
           [combinedId + ".date"]: serverTimestamp(),
         });
+        console.log("try block")
       
         
     }
 
     }
     catch(err){ 
-        console.log(err)
+     seterror(true)
     
     } 
    setuser(null)

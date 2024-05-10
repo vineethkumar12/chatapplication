@@ -23,8 +23,7 @@ export const Chats = ({currentuser}) => {
     },[currentuser.uid])  
     const handle=(u)=>{
    dispatch({type:"CHA",payload: u})  
-   //document.getElementById("vi").style.active
-    }
+     }
 
 
   return (
