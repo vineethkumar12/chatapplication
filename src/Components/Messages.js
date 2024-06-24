@@ -14,7 +14,7 @@ export const Messages = ({ currentuser }) => {
       unsub();
     };
   }, [data.chatId]);
-  console.log(messages);
+
   return (
     <div
       className="messages"

@@ -3,7 +3,7 @@ import { store } from "./Redux";
 
 export const Chatbar = () => {
   const { data } = useContext(store);
-  console.log(data.user + "vinee");
+
   return (
     <div className=" chatbar h-14 bg-gradient-to-r from-yellow-500 via-pink-800 to-cyan-700 ml-80 ">
       <span className="ml-2 ">{data.user?.displayName}</span>
